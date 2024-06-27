@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-area {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border: 2px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.trash, .good {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#score {
+    font-size: 24px;
+    margin-top: 20px;
+}
