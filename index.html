@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whack-a-Kirby</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="start-screen">
       <h1>Whack-a-Kirby</h1>
-      <label for="player-name">Enter your name:</label>
-      <input type="text" id="player-name" placeholder="Your name here" />
-      <button id="start-button">Start Game</button>
+      <div class="user-data">
+        <label for="player-name">Enter your name:</label>
+        <input type="text" id="player-name" placeholder="Your name here" />
+        <button id="start-button">Start Game</button>
+      </div>
     </div>
 
     <div id="intro-screen" class="hidden">
       <img id="kirby-image" src="slike/kirby.png" alt="Kirby" />
       <p id="kirby-dialogue"></p>
-      <button id="next-button">Next</button>
     </div>
 
     <div id="level-intro-screen" class="hidden">
@@ -27,10 +31,15 @@
     </div>
 
     <div id="game-screen" class="hidden">
-      <h2 id="level-title"></h2>
+      <div class="title-score-container">
+        <h2 id="level-title"></h2>
+        <div id="score">Score: 0</div>
+      </div>
       <div id="game-area">
       </div>
-      <div id="score">Score: 0</div>
+
+      <img id="kirby-bottom-left" src="./slike/kirby.png" alt="Kirby" />
+      <button id="main-menu-button">Back to Main Menu</button>
     </div>
 
     <div id="end-screen" class="hidden">
@@ -38,6 +47,8 @@
       <p id="end-message"></p>
       <button id="restart-button">Play Again</button>
     </div>
+
+    <button id="help-button" class="help-button">Help</button>
 
     <script src="script.js"></script>
   </body>

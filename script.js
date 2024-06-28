@@ -1,11 +1,11 @@
-document.getElementById("start-button").addEventListener("click", showIntro);
-document
-  .getElementById("next-button")
-  .addEventListener("click", showLevelIntro);
+document.getElementById("start-button").addEventListener("click", startGame);
 document
   .getElementById("start-level-button")
   .addEventListener("click", startLevel);
 document.getElementById("restart-button").addEventListener("click", startGame);
+document.getElementById("main-menu-button").addEventListener("click", backToMainMenu);
+document.getElementById("help-button").addEventListener("click", toggleHelp);
+
 
 const gameArea = document.getElementById("game-area");
 const scoreDisplay = document.getElementById("score");
@@ -18,6 +18,7 @@ let score = 0;
 let level = 1;
 let gameInterval;
 let introIndex = 0;
+let previousScreen = null;
 
 const trashTypes = [
   ["slike/kesa.png", "slike/flase.png", "slike/slamcice.png"], // Nivo 1
@@ -39,12 +40,39 @@ const levelExplanations = [
   "Help Kirby collect electronic waste at the landfill. Look for broken computers, old phones, and TVs.",
 ];
 
-function showIntro() {
-  introIndex = 0;
-  document.getElementById("start-screen").classList.add("hidden");
-  document.getElementById("intro-screen").classList.remove("hidden");
-  updateKirbyDialogue();
+function backToMainMenu() {
+  clearInterval(gameInterval);
+  document.getElementById("game-screen").classList.add("hidden");
+  document.getElementById("start-screen").classList.remove("hidden");
+  score = 0;
+  level = 1;
+  updateScore();
 }
+
+function toggleHelp() {
+  const helpButton = document.getElementById("help-button");
+  const introScreen = document.getElementById("intro-screen");
+  
+  if (introScreen.classList.contains("hidden")) {
+    previousScreen = document.querySelector('body > div:not(.hidden)');
+    previousScreen.classList.add("hidden");
+    introScreen.classList.remove("hidden");
+    helpButton.textContent = "Close Help";
+  } else {
+    introScreen.classList.add("hidden");
+    if (previousScreen) {
+      previousScreen.classList.remove("hidden");
+    }
+    helpButton.textContent = "Help";
+  }
+}
+
+// function showIntro() {
+//   introIndex = 0;
+//   document.getElementById("start-screen").classList.add("hidden");
+//   document.getElementById("intro-screen").classList.remove("hidden");
+//   updateKirbyDialogue();
+// }
 
 function showLevelIntro() {
   document.getElementById("intro-screen").classList.add("hidden");
@@ -73,6 +101,7 @@ function startGame() {
   const playerName = document.getElementById("player-name").value || "Player";
   score = 0;
   level = 1;
+  document.getElementById("start-screen").classList.add("hidden");
   document.getElementById("intro-screen").classList.add("hidden");
   document.getElementById("level-intro-screen").classList.remove("hidden");
   document.getElementById("end-screen").classList.add("hidden");
@@ -86,6 +115,8 @@ function startLevel() {
   document.getElementById("game-screen").classList.remove("hidden");
   levelTitle.textContent = `Level ${level}`;
   gameArea.innerHTML = "";
+  document.getElementById("game-screen").className = `level-${level}`;
+
   for (let i = 0; i < 16; i++) {
     const tile = document.createElement("div");
     tile.className = "tile";
@@ -145,6 +176,7 @@ function checkLevelUp() {
       document.getElementById("level-intro-screen").classList.remove("hidden");
       updateLevelDialogue();
       clearInterval(gameInterval);
+      //document.getElementById("game-screen").className = `level-${level}`;
     }
   }
 }
