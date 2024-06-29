@@ -185,10 +185,15 @@ function endGame(win) {
   clearInterval(gameInterval);
   document.getElementById("game-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
+  const kirbyImage = document.getElementById("kirby-nova-image");
   const playerName = document.getElementById("player-name").value || "Player";
   if (win) {
     endMessage.textContent = `Čestitamo ${playerName}! Pomogli ste Kirbiju da očisti planetu!`;
+    kirbyImage.src = "./slike/kirby.png";  
+    kirbyImage.alt = "Happy Kirby";
   } else {
     endMessage.textContent = `Žao mi je ${playerName}, izgubili ste. Pokušajte ponovo!`;
+    kirbyImage.src = "./slike/meta knight.png";  
+    kirbyImage.alt = "Sad Kirby";
   }
 }
