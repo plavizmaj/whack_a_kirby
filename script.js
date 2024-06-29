@@ -57,13 +57,13 @@ function toggleHelp() {
     previousScreen = document.querySelector('body > div:not(.hidden)');
     previousScreen.classList.add("hidden");
     introScreen.classList.remove("hidden");
-    helpButton.textContent = "Close Help";
+    helpButton.textContent = "Zatvori prozor";
   } else {
     introScreen.classList.add("hidden");
     if (previousScreen) {
       previousScreen.classList.remove("hidden");
     }
-    helpButton.textContent = "Help";
+    helpButton.textContent = "Pomoć";
   }
 }
 
