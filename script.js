@@ -30,14 +30,14 @@ const kirbyImage = "slike/kirby.png";
 
 const intros = [
   "OBJASNJENJE CELE IGRE(moze i da se ovo skroz obrise)",
-  "Kirby is in the city. Help him collect chemical waste like old batteries, paints, and acids.",
-  "Kirby is at the landfill. Help him collect electronic waste like broken computers, old phones, and TVs.",
+  "Kirbi je u gradu. Pomozite mu da sakupi hemijski otpad kao što su stare baterije, boje i kiseline.",
+  "Kirbi je na deponiji. Pomozite mu da sakupi elektronski otpad kao što su pokvareni računari, stari telefoni i televizori.",
 ];
 
 const levelExplanations = [
-  "Help Kirby clean the beach by clicking on the trash! Avoid flowers and butterflies.",
-  "Help Kirby collect chemical waste in the city. Look for old batteries, paints, and acids.",
-  "Help Kirby collect electronic waste at the landfill. Look for broken computers, old phones, and TVs.",
+  "Pomozite Kirbiju da očisti plažu klikom na smeće! Izbegavajte cveće i leptire.",
+  "Pomozite Kirbiju da sakupi hemijski otpad u gradu. Tražite stare baterije, boje i kiseline.",
+  "Pomozite Kirbiju da sakupi elektronski otpad na deponiji. Tražite pokvarene računare, stare telefone i televizore.",
 ];
 
 function backToMainMenu() {
@@ -187,8 +187,8 @@ function endGame(win) {
   document.getElementById("end-screen").classList.remove("hidden");
   const playerName = document.getElementById("player-name").value || "Player";
   if (win) {
-    endMessage.textContent = `Congratulations ${playerName}! You helped Kirby clean up the world!`;
+    endMessage.textContent = `Čestitamo ${playerName}! Pomogli ste Kirbiju da očisti planetu!`;
   } else {
-    endMessage.textContent = `Sorry ${playerName}, you lost. Try again!`;
+    endMessage.textContent = `Žao mi je ${playerName}, izgubili ste. Pokušajte ponovo!`;
   }
 }
