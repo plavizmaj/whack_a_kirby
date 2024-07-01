@@ -23,7 +23,7 @@ body {
     font-family: "DynaPuff", system-ui;
 }
 
-#start-screen h1{
+#start-screen h1 {
     margin: 0;
     font-size: 8rem;
     padding-top: 3rem;
@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgba(154, 206, 149, 0.5);
-    width: 40%;;
+    width: 40%;
     margin: 0 auto;
     border-radius: 20px;
     border: #FFF3B7 1px solid;
@@ -83,15 +83,15 @@ body {
 #game-screen.level-1 {
     background-image: url('./slike/pozadine/plaza.jpg');
 }
-  
+
 #game-screen.level-2 {
     background-image: url('./slike/pozadine/grad.jpg');
 }
-  
+
 #game-screen.level-3 {
     background-image: url('./slike/pozadine/deponija.jpg');
 }
-  
+
 #game-screen {
     background-size: cover;
     background-repeat: no-repeat;
@@ -110,7 +110,7 @@ body {
     position: absolute;
     bottom: 40px;
     left: 100px;
-    width: 220px; 
+    width: 220px;
     height: auto;
 }
 
@@ -122,7 +122,6 @@ body {
     background-color: #FFF3B7;
     font-family: "DynaPuff", system-ui;
 }
-
 
 #game-area {
     display: grid;
@@ -163,54 +162,55 @@ body {
 }
 
 .help-button {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  color: #5D3882;
-  border: #FF6885 1px solid;
-  background-color: #FFF3B7;
-  font-family: "DynaPuff", system-ui;
-  z-index: 1000;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    color: #5D3882;
+    border: #FF6885 1px solid;
+    background-color: #FFF3B7;
+    font-family: "DynaPuff", system-ui;
+    z-index: 1000;
 }
+
 /* Stilovi za intro-screen div */
 #intro-screen {
-    padding: 10px; 
+    padding: 10px;
     border-radius: 20px;
     text-align: center;
-    margin: 2% auto; 
+    margin: 2% auto;
     width: 60%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Comic Sans MS', cursive; 
-    background-color: rgba(255, 192, 203, 0.8); 
-    position: relative; 
-    z-index: 1; 
-  }
-  
-  #intro-screen img {
-    max-width: 70%; 
+    font-family: 'Comic Sans MS', cursive;
+    background-color: rgba(255, 192, 203, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+#intro-screen img {
+    max-width: 70%;
     height: auto;
     display: block;
-    margin: 0 auto 10px; 
-    
-  }
-  
-  #intro-screen h2 {
-    color: #8B2252; 
-    font-size: 1.6rem; 
-    margin-bottom: 0.5rem; 
-  }
-  
-  #intro-screen p {
-    color: #5D3882; 
+    margin: 0 auto 10px;
+
+}
+
+#intro-screen h2 {
+    color: #8B2252;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+#intro-screen p {
+    color: #5D3882;
     line-height: 1.4;
-    margin: 0.3rem 0; 
-  }
-  
-  /* Stilovi za pozadinsku sliku iza intro-screen */
-  #background-image {
+    margin: 0.3rem 0;
+}
+
+/* Stilovi za pozadinsku sliku iza intro-screen */
+#background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -218,6 +218,46 @@ body {
     height: 100%;
     background-image: url('./slike/pozadine/pocetna.jpeg');
     background-size: cover;
-    z-index: -1; 
-  }
-  
+    z-index: -1;
+}
+
+#start-level-button {
+    margin: 2rem 0;
+    padding: 0.6rem 1rem;
+    font-family: "DynaPuff", system-ui;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    color: #FF6885;
+    border: #FF6885 1px solid;
+    background-color: #FFF3B7;
+}
+
+#level-explanation-title {
+    margin: 0;
+    font-size: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #190D61;
+}
+
+#level-dialogue {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: #190D61;
+}
+
+.trash-img {
+    margin-right: 100px;
+    width: 150px;
+}
+
+.trash-img:last-child {
+    margin-right: 0;
+}
+
+#trash-types-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

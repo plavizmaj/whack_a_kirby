@@ -13,6 +13,8 @@ const levelTitle = document.getElementById("level-title");
 const endMessage = document.getElementById("end-message");
 const kirbyDialogue = document.getElementById("kirby-dialogue");
 const levelDialogue = document.getElementById("level-dialogue");
+const trashTypesContainer = document.getElementById("trash-types-container");
+const levelExplanationTitle = document.getElementById("level-explanation-title");
 
 let score = 0;
 let level = 1;
@@ -35,9 +37,15 @@ const intros = [
 ];
 
 const levelExplanations = [
-  "Pomozite Kirbiju da očisti plažu klikom na smeće! Izbegavajte cveće i leptire.",
-  "Pomozite Kirbiju da sakupi hemijski otpad u gradu. Tražite stare baterije, boje i kiseline.",
-  "Pomozite Kirbiju da sakupi elektronski otpad na deponiji. Tražite pokvarene računare, stare telefone i televizore.",
+  "Pomozite Kirbiju da očisti plažu klikom na plastične kese, flaše i slamke! Izbegavajte cveće i leptire.",
+  "Kirbi je u gradu! Zajedno sa njim sakupljajte hemijski otpad - stare baterije, boje i kiseline.",
+  "Došli ste do poslednjeg nivoa - sada je na redu deponija. Pomozite Kirbiju da sakupi elektronski otpad! Tražite pokvarene računare, stare telefone i televizore.",
+];
+
+const levelExplanationTitles = [
+  "Lokacija: PLAŽA",
+  "Lokacija: GRAD",
+  "Lokacija: DEPONIJA",
 ];
 
 function backToMainMenu() {
@@ -78,6 +86,8 @@ function showLevelIntro() {
   document.getElementById("intro-screen").classList.add("hidden");
   document.getElementById("level-intro-screen").classList.remove("hidden");
   updateLevelDialogue();
+  updateTrashTypesImages(level);
+  updateLevelTitle(level);
 }
 
 function updateKirbyDialogue() {
@@ -97,6 +107,22 @@ function updateLevelDialogue() {
   levelDialogue.textContent = levelExplanations[level - 1];
 }
 
+function updateTrashTypesImages(levelIndex) {
+  trashTypesContainer.innerHTML = "";
+
+  trashTypes[levelIndex - 1].forEach((trashType) => {
+    const img = document.createElement("img");
+    img.src = trashType;
+    img.alt = "Trash";
+    img.classList.add("trash-img");
+    trashTypesContainer.appendChild(img);
+  });
+}
+
+function updateLevelTitle(levelIndex) {
+  levelExplanationTitle.textContent = levelExplanationTitles[levelIndex - 1];
+}
+
 function startGame() {
   const playerName = document.getElementById("player-name").value || "Player";
   score = 0;
@@ -108,6 +134,8 @@ function startGame() {
   document.getElementById("game-screen").classList.add("hidden");
   updateLevelDialogue();
   updateScore();
+  updateTrashTypesImages(level);
+  updateLevelTitle(level);
 }
 
 function startLevel() {
@@ -175,6 +203,8 @@ function checkLevelUp() {
       document.getElementById("game-screen").classList.add("hidden");
       document.getElementById("level-intro-screen").classList.remove("hidden");
       updateLevelDialogue();
+      updateTrashTypesImages(level);
+      updateLevelTitle(level);
       clearInterval(gameInterval);
       //document.getElementById("game-screen").className = `level-${level}`;
     }
