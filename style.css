@@ -261,3 +261,12 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+#level-intro-screen {
+    background: url(./slike/pozadine/kirby.png) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "DynaPuff", system-ui;
+}
