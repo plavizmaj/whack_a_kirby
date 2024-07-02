@@ -187,6 +187,7 @@ body {
     background-color: rgba(255, 192, 203, 0.8);
     position: relative;
     z-index: 1;
+    margin-top: 0;
 }
 
 #intro-screen img {
@@ -201,6 +202,7 @@ body {
     color: #8B2252;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
+    font-family: "DynaPuff", system-ui;
 }
 
 #intro-screen p {
@@ -269,4 +271,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: "DynaPuff", system-ui;
+}
+
+#end-screen h1 {
+    margin-top: 0;
+    padding-top: 3rem;
+}
+
+#restart-button {
+    margin: 2rem 0;
+    padding: 0.6rem 1rem;
+    font-family: "DynaPuff", system-ui;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    color: #FF6885;
+    border: #FF6885 1px solid;
+    background-color: #FFF3B7;
 }
