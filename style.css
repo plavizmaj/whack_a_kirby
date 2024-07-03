@@ -244,10 +244,12 @@ body {
 
 #level-dialogue {
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 150px;
     margin-right: 150px;
     color: #190D61;
+    line-height: 1.65;
 }
 
 .trash-img {

@@ -37,9 +37,14 @@ const intros = [
 ];
 
 const levelExplanations = [
-  "Pomozite Kirbiju da očisti plažu klikom na plastične kese, flaše i slamke! Izbegavajte cveće i leptire.",
-  "Kirbi je u gradu! Zajedno sa njim sakupljajte hemijski otpad - stare baterije, boje i kiseline.",
-  "Došli ste do poslednjeg nivoa - sada je na redu deponija. Pomozite Kirbiju da sakupi elektronski otpad! Tražite pokvarene računare, stare telefone i televizore.",
+  `Svake godine 10 miliona tona plastičnog otpada završi u okeanu! Veliki broj morskih životinja ugine zbog plastičnih kesa.<br>
+  Klikom na <b>plastične kese, flaše i slamke</b> pomozite Kirbiju da očisti plažu.<br>
+  <b>Na svakom nivou izbegavajte cveće, ptice i leptire.</b>`,
+  `Kirbi je u gradu! Zajedno sa njim sakupljajte hemijski otpad - <b>stare baterije, boje i kiseline</b>.<br>
+  Hemijski otpad može zagaditi zemljište, vazduh, površinske i podzemne vode. Zagađenje zemljišta može ugroziti ljude koji žive na tom području, ali i biljke i životinje koje su tu nastanjene.`,
+  `Došli ste do poslednjeg nivoa! Sada je na redu deponija.<br>
+  Elektronski otpad sadrži između 600 i 1000 različitih hemijskih supstanci koje su štetne po zdravlje i ugrožavaju životnu sredinu, ukoliko se ne odlažu i ne recikliraju na odgovarajući način.<br>
+  Pomozite Kirbiju da sakupi elektronski otpad! Tražite <b>pokvarene računare, stare telefone i televizore</b>.`,
 ];
 
 const levelExplanationTitles = [
@@ -104,7 +109,7 @@ function updateKirbyDialogue() {
 }
 
 function updateLevelDialogue() {
-  levelDialogue.textContent = levelExplanations[level - 1];
+  levelDialogue.innerHTML = levelExplanations[level - 1];
 }
 
 function updateTrashTypesImages(levelIndex) {
