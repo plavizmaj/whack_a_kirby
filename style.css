@@ -226,6 +226,7 @@ body {
 #start-level-button {
     margin: 2rem 0;
     padding: 0.6rem 1rem;
+    margin-bottom: 0;
     font-family: "DynaPuff", system-ui;
     font-size: 1.4rem;
     border-radius: 10px;
@@ -263,7 +264,7 @@ body {
 
 #trash-types-container {
     padding-top: 30px;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 #level-intro-screen {
