@@ -3,9 +3,10 @@ document
   .getElementById("start-level-button")
   .addEventListener("click", startLevel);
 document.getElementById("restart-button").addEventListener("click", startGame);
-document.getElementById("main-menu-button").addEventListener("click", backToMainMenu);
+document
+  .getElementById("main-menu-button")
+  .addEventListener("click", backToMainMenu);
 document.getElementById("help-button").addEventListener("click", toggleHelp);
-
 
 const gameArea = document.getElementById("game-area");
 const scoreDisplay = document.getElementById("score");
@@ -14,7 +15,9 @@ const endMessage = document.getElementById("end-message");
 const kirbyDialogue = document.getElementById("kirby-dialogue");
 const levelDialogue = document.getElementById("level-dialogue");
 const trashTypesContainer = document.getElementById("trash-types-container");
-const levelExplanationTitle = document.getElementById("level-explanation-title");
+const levelExplanationTitle = document.getElementById(
+  "level-explanation-title"
+);
 
 let score = 0;
 let level = 1;
@@ -65,9 +68,9 @@ function backToMainMenu() {
 function toggleHelp() {
   const helpButton = document.getElementById("help-button");
   const introScreen = document.getElementById("intro-screen");
-  
+
   if (introScreen.classList.contains("hidden")) {
-    previousScreen = document.querySelector('body > div:not(.hidden)');
+    previousScreen = document.querySelector("body > div:not(.hidden)");
     previousScreen.classList.add("hidden");
     introScreen.classList.remove("hidden");
     helpButton.textContent = "Zatvori prozor";
@@ -224,11 +227,11 @@ function endGame(win) {
   const playerName = document.getElementById("player-name").value || "Player";
   if (win) {
     endMessage.textContent = `Čestitamo ${playerName}! Pomogli ste Kirbiju da očisti planetu!`;
-    kirbyImage.src = "./slike/kirby.png";  
+    kirbyImage.src = "./slike/kirby.png";
     kirbyImage.alt = "Happy Kirby";
   } else {
     endMessage.textContent = `Žao mi je ${playerName}, izgubili ste. Pokušajte ponovo!`;
-    kirbyImage.src = "./slike/meta knight.png";  
+    kirbyImage.src = "./slike/meta knight.png";
     kirbyImage.alt = "Sad Kirby";
   }
 }
