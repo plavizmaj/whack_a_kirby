@@ -57,6 +57,8 @@ function backToMainMenu() {
   clearInterval(gameInterval);
   document.getElementById("game-screen").classList.add("hidden");
   document.getElementById("start-screen").classList.remove("hidden");
+  document.getElementById("help-button").classList.remove("hidden");
+  
   score = 0;
   level = 1;
   updateScore();
@@ -137,6 +139,7 @@ function startGame() {
   document.getElementById("level-intro-screen").classList.remove("hidden");
   document.getElementById("end-screen").classList.add("hidden");
   document.getElementById("game-screen").classList.add("hidden");
+  document.getElementById("help-button").classList.add("hidden");
   updateLevelDialogue();
   updateScore();
   updateTrashTypesImages(level);
